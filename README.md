@@ -12,7 +12,10 @@ Tools:
 Building:
 -----
 Clone the repository
-Use IntelliJ or Eclipse to open the project. Maven will download all the dependencies required
+Use IntelliJ or Eclipse to open the project. 
+```javascript
+mvn clean install
+```
 
 
 Running:
