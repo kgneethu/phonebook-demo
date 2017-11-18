@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface ContactsService {
 
-    List<Contacts> getAllContacts(String uri) throws Exception;
+    List<Contacts> getAllContacts(final String uri) throws Exception;
+
+    List<Contacts> getSearchContacts(final String uri, final String name) throws  Exception;
 }

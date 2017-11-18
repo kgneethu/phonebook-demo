@@ -1,12 +1,22 @@
-<html>
-<head>
-<title> PhoneBook </title>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<%@ include file="common/header.jspf" %>
 <div class="container">
-<h1> Phone book details </h1>
+<h1> Phonebook </h1> <br/>
+<div>
+<table class="table">
+    <tr>
+        <td>
+        <form method="post">
+        <input type="text" name="contact" value="Search by name..." onfocus="if(this.value == 'Search by name...') {this.value=''}"
+         onblur="if(this.value == ''){this.value ='Search by name...'}">
+        <input type="submit" value="Search" class="btn btn-success">
+        </form>
+        </td>
+        <td>
+        <form method="get"><input type="submit" value="Reset" class="btn btn-warning">
+        </td>
+    </tr>
+</table>
+</div>
 <table class="table table-striped">
     <thead>
         <th> Name </th>
@@ -24,7 +34,4 @@
     </tbody>
 </table>
 </div>
-<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</body>
-</html>
+<%@ include file="common/footer.jspf" %>
