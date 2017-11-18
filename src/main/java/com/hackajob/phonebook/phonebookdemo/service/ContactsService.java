@@ -9,4 +9,6 @@ public interface ContactsService {
     List<Contacts> getAllContacts(final String uri) throws Exception;
 
     List<Contacts> getSearchContacts(final String uri, final String name) throws  Exception;
+
+    List<Contacts> getSortedContacts(final String uri, final String sortOrder) throws Exception;
 }

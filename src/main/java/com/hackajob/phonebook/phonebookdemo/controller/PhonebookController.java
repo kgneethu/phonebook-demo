@@ -24,6 +24,12 @@ public class PhonebookController {
         return "phoneBook";
     }
 
+    @RequestMapping(value = "/phonebook", method = RequestMethod.GET, params = "sort")
+    public String getPhoneBookContacts(@RequestParam String sort,  ModelMap modelMap) throws Exception {
+        modelMap.put("phoneBook", contactsService.getSortedContacts(phonebookApi, sort));
+        return "phoneBook";
+    }
+
     @RequestMapping(value = "/phonebook", method = RequestMethod.POST)
     public String getSearchedContacts(@RequestParam String contact, ModelMap modelMap) throws Exception {
         modelMap.put("phoneBook", contactsService.getSearchContacts(phonebookApi, contact));

@@ -24,4 +24,12 @@ public class ContactServiceImpl implements ContactsService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<Contacts> getSortedContacts(String uri, String sortOrder) throws Exception {
+        List<Contacts> contacts = getAllContacts(uri);
+        if(sortOrder.equalsIgnoreCase("asc")) contacts.sort((c1, c2) -> c1.getName().compareTo(c2.getName()));
+        else contacts.sort((c1, c2) -> c2.getName().compareTo(c1.getName()));
+        return contacts;
+    }
+
 }
